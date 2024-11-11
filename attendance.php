@@ -20,12 +20,10 @@ $sql = "SELECT * FROM irax";
 $result = $conn->query($sql);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+<head>
     <title>Attendance Records</title>
-    <!-- Add Bootstrap CSS link here -->
+    
 </head>
 <body>
     <div class="container">
