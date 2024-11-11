@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+<head>
     <title>Attendance Management</title>
 </head>
-<body>
+<body bgcolour="ABD055">
     <h1>Automated Attendance Management System</h1>
     <a href="attendance.php">View Attendance</a>
     <a href="Add attendance.php">Add Attendance</a>
