@@ -6,7 +6,7 @@
 <body>
     <div class="container">
         <h2>Add Attendance</h2>
-        <form action="arinda.sql" method="POST">
+        <form action="server.js" method="POST">
             <div class="form-group">
                 <label for="student_name">Student Name:</label>
                 <input type="text" class="form-control" id="student_name" name="student_name" required>
