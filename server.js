@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors()););
+app.use(cors()); // Fixed the syntax error here
 
 // Connect to MySQL database
 const db = mysql.createConnection({
@@ -27,7 +27,10 @@ db.connect((err) => {
 // API to get attendance records
 app.get('/attendance', (req, res) => {
     db.query('SELECT * FROM attendance', (err, results) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error fetching attendance records:', err);
+            return res.status(500).send('Error fetching attendance records');
+        }
         res.json(results);
     });
 });
@@ -36,7 +39,10 @@ app.get('/attendance', (req, res) => {
 app.post('/attendance', (req, res) => {
     const record = req.body;
     db.query('INSERT INTO attendance SET ?', record, (err, result) => {
-        if (err) throw err;
+        if (err) {
+            console.error('Error adding attendance record:', err);
+            return res.status(500).send('Error adding attendance record');
+        }
         res.send('Attendance record added');
     });
 });
